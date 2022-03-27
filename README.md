@@ -26,4 +26,4 @@ Demo
 ----
 
 Demo app in `index.html` can be used to preview current screen contents and
-perform basic remote control (arrow keys, enter = OK, escape = Back, home = Home)
+perform basic remote control (arrow keys, enter = OK, escape = Back, home = Home, end = Exit)
