@@ -21,6 +21,7 @@ document.addEventListener('keydown', (evt) => {
     'ArrowDown': 'DOWN',
     'Escape': 'BACK',
     'Home': 'HOME',
+    'End': 'EXIT',
   };
 
   if (evt.key in keys && inputSocket) {
@@ -28,7 +29,15 @@ document.addEventListener('keydown', (evt) => {
   }
 });
 
+var stop
+
+document.querySelector('#stop').addEventListener('click', async () => {
+  stop = true
+});
+
 document.querySelector('#run').addEventListener('click', async () => {
+  stop = false
+  
   if (client) {
     client.close();
     client = null;
@@ -62,7 +71,7 @@ document.querySelector('#run').addEventListener('click', async () => {
     inputSocket.onclose = () => log('input close');
   })();
 
-  while (true) {
+  while (!stop) {
     const res = await client.request({
       uri: 'ssap://tv/executeOneShot',
       payload: {},
