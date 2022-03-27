@@ -25,5 +25,5 @@ by webOS.
 Demo
 ----
 
-Demo app in `index.html` can be used to preview current screen contents and
+Demo app in `index.html` can be used to preview current screen contents, save them when stopped and
 perform basic remote control (arrow keys, enter = OK, escape = Back, home = Home, end = Exit)
